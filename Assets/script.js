@@ -2,7 +2,7 @@ function displayWeatherInfo() {
 
     event.preventDefault();
     var city = $("#city-input").val().trim();
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=55f1ac175bb9b52cef1535d895557542"
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=55f1ac175bb9b52cef1535d895557542"
     var today = new Date();
     var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
 
@@ -18,7 +18,7 @@ function displayWeatherInfo() {
 
         var latitude = response.city.coord.lat;
         var longitude = response.city.coord.lon;
-        var uvURL = "http://api.openweathermap.org/data/2.5/uvi?appid=55f1ac175bb9b52cef1535d895557542&lat=" + latitude + "&lon=" + longitude
+        var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=55f1ac175bb9b52cef1535d895557542&lat=" + latitude + "&lon=" + longitude
 
         $.ajax({
             url: uvURL,
